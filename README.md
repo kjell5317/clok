@@ -1,2 +1,3 @@
-# project-clok
-The minimalist smart Clock you need
+# CLOK
+
+The minimalist smart Clock you need!
