@@ -1,3 +1,3 @@
 # CLOK
 
-The minimalist smart Clock you need!
+The minimalist Smart Clock you need!
