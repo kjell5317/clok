@@ -6,7 +6,7 @@
 #include <Adafruit_NeoPixel.h>
 
 #ifdef __AVR__
-  #include <avr/power.h>
+#include <avr/power.h>
 #endif
 
 // ----------------------------------------------------------------------------
@@ -15,14 +15,14 @@
 #define ID 1
 
 // WiFi
-const char *ssid = "IoT";
-const char *password = "aHFpONs5iOVT84sEqSyx";
+const char *ssid = "";
+const char *password = "";
 
 // MQTT
-const char *mqtt_server = "10.0.20.20";
+const char *mqtt_server = "";
 const int mqtt_port = 1883;
 const char *mqtt_user = "mqtt";
-const char *mqtt_pw = "5317wasch";
+const char *mqtt_pw = "";
 
 // ----------------------------------------------------------------------------
 
@@ -314,29 +314,29 @@ void checkButton()
         {
             if (pomodoro)
             {
-              stopTimer();
+                stopTimer();
             }
             else
             {
-              startLight();
-              startTimer();
+                startLight();
+                startTimer();
             }
         }
     }
     if (state2 != lastState2)
     {
-      lastState2 = state2;
-      if (state2 == HIGH)
-      {
-        if (light)
+        lastState2 = state2;
+        if (state2 == HIGH)
         {
-          stopLight();
+            if (light)
+            {
+                stopLight();
+            }
+            else
+            {
+                startLight();
+            }
         }
-        else
-        {
-          startLight();
-        }
-      }
     }
 }
 
@@ -419,7 +419,6 @@ void updateTimer()
         }
     }
 }
-
 
 // Loop
 void loop()
